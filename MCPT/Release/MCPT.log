@@ -1,0 +1,8 @@
+﻿  main.cpp
+c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\freeimage.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  正在生成代码
+  2 of 2230 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+  MCPT.vcxproj -> C:\Users\PAN\Desktop\CG_21921218_潘小鹍\src\Release\MCPT.exe
