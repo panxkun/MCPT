@@ -57,9 +57,9 @@
 
 默认ssp=100,控制台窗口输出模型的各项信息，以及逐行输出每一次采样时间。可视化界面和控制台窗口分别如图1和图2：
 
-<img src="C:\Users\PAN\Desktop\CG_21921218_潘小鹍\image\cbox.bmp" alt="cbox" style="zoom: 50%;" />
+<img src=".\image\cbox.bmp" alt="cbox" style="zoom: 50%;" />
 
-<img src="C:\Users\PAN\Desktop\CG_21921218_潘小鹍\image\consloe.bmp" alt="consloe" style="zoom:50%;" />
+<img src=".\image\consloe.bmp" alt="consloe" style="zoom:50%;" />
 
 可以通过用vs2017修改源码中main函数中的绘制场景（Objname_render()）的调用来查看不同模型绘制效果。
 
@@ -86,7 +86,7 @@
 
 ### cobx
 
-<img src="C:\Users\PAN\Desktop\CG_21921218_潘小鹍\image\001_cbox.png" alt="001_cbox" style="zoom:50%;" />
+<img src=".\image\001_cbox.png" alt="001_cbox" style="zoom:50%;" />
 
 - 从左往右，从上往下的spp分别为1、10、50、100次，可以看出，在一次采样的结果，噪点很多，但随着采样次数的增多，噪点逐渐减少，在经过10次采样后，噪点大幅度减少，但仍可以看出，但当采样次数到达50次、100次时，绘制结果已经收敛到比较好的效果，真实感越来越强。
 - 此模型的自身有两个三角形光源，但只用这两个光源的话，场景的亮度偏低偏暗，故在此基础上又添加了外部光源。
@@ -96,7 +96,7 @@
 
 ### diningroom
 
-<img src="C:\Users\PAN\Desktop\CG_21921218_潘小鹍\image\001_diningroom.png" alt="001_diningroom" style="zoom: 50%;" />
+<img src=".\image\001_diningroom.png" alt="001_diningroom" style="zoom: 50%;" />
 
 - 从上到下的采样次数分别为1、10、50和100，可以得出cbox中相同的结论
 - 此模型的内置光源有1520个，而图像分辨率为1280X720，所以对于直接光照的计算占了总耗时的很大一部分，如果直接使用内置光源，在本机上的一次采样耗时大约一个小时，故为了提高整体的绘制效率，而没有使用内置的光源，而是手动添加了类似的光源，最终达到如图效果
@@ -105,7 +105,7 @@
 
 ### mis
 
-<img src="C:\Users\PAN\Desktop\CG_21921218_潘小鹍\image\001_mis.png" alt="001_mis" style="zoom: 50%;" />
+<img src=".\image\001_mis.png" alt="001_mis" style="zoom: 50%;" />
 
 - 从左往右，从上往下的spp分别为1、10、50、100次，可以得出cbox中相同的结论
 - 此模型没有手动添加外部的光源，内置光源数量3800个，故一次采样耗时本机上大约10min左右
@@ -114,7 +114,7 @@
 
 ### CornellBox-Glossy（自定义场景）
 
-<img src="C:\Users\PAN\Desktop\CG_21921218_潘小鹍\image\010_CornellBox-Glossy.png" alt="010_CornellBox-Glossy" style="zoom:50%;" />
+<img src=".\image\010_CornellBox-Glossy.png" alt="010_CornellBox-Glossy" style="zoom:50%;" />
 
 - 由于场景较为简单，一次采样耗时大约0.4s
 
@@ -131,6 +131,6 @@
 - 同时，由于在家计算资源紧缺，为了避免在连续多次采样过程中，因意外情况程序中断，故在实验过程中，将每单次采样结果（即每个像素点的三色）以文本形式保存。当采样spp达到了设定数值时，再重新读取记录文件，进行“离线”绘制。同样可以得到在不同采样次数下的绘制结果（源码中主函数的offline_render()）。
 - 为了使得最终的绘制的效果更好，对于obj文件和mtl文件中的一些参数以及相机参数的设定进行了略微的调整。例如对于自己定义的场景在一开始导入时会出现一下情形
 
-<img src="C:\Users\PAN\Desktop\CG_21921218_潘小鹍\image\capture_20200319211943006.bmp" alt="capture_20200319211943006" style="zoom:50%;" />
+<img src=".\image\capture_20200319211943006.bmp" alt="capture_20200319211943006" style="zoom:50%;" />
 
 ​		一开始以为是法向量或者三角化面片出现了问题，排除了很多可能的原因，后来发现将floor的四个顶点的y方向坐标由0.0000改为0.0001此问题就消失了。所以可以断定程序在处理浮点数的时候存在一定的误差。
